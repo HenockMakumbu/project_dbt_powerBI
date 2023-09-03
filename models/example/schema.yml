@@ -2,20 +2,29 @@
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: hosts_airbnb_paris
+    description: "table in dbt_project_final database"
     columns:
-      - name: id
+      - name: host_id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
+  - name: listings_airbnb_paris
+    description: "table in dbt_project_final database"
+    columns:
+      - name: host_id
+        description: "hosts identification"
+        tests:
+          - unique
+          - not_null
+          
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+sources:
+  - name: airbnb_paris
+    database: dbt_project_final
+    schema: public  
+    tables:
+      - name: hosts_airbnb_paris
+      - name: listings_airbnb_paris
+     

@@ -1,3 +1,37 @@
+1. $ dbt init 
+
+2. Configuration entrpot de données postgres et base de données dbt_project_final
+3. $ dbt build #(test connexion postgres)
+4. customization schema staging dans macros
+5. $ dbt seed # (csv) error (config dans seed au niveau de dbt_project.yml)
+6. $ dbt test #(tester l'unicité et la non nulleté des colonnes host_id et id des deux tables) : host_id non unique dans la table "listings_airbnb_paris"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Welcome to your new dbt project!
 
 ### Using the starter project

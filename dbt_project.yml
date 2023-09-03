@@ -34,4 +34,13 @@ models:
   dbt_project_final:
     # Config indicated by + and applies to all files under models/example/
     example:
-      +materialized: view
+      +materialized: table
+      +schema: staging
+
+seeds:
+  dbt_project_final:
+    listings_airbnb_paris:
+      +column_types:
+        id: BIGINT
+        host_id: BIGINT
+        license: TEXT
