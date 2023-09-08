@@ -51,5 +51,5 @@ exposures:
       - source("airbnb_paris","hosts_airbnb_paris")
 
     owner:
-      name: Team Aliou Seydi, Fatimatou Ogo Seck et Sokhna Amainata Sy Diouf
+      name: Team Aliou Seydi, Fatimatou Ogo Seck, Henock Mackumbu Mboko et Sokhna Amainata Sy Diouf
       email: samsydiouf14@gmail.com
