@@ -27,4 +27,29 @@ sources:
     tables:
       - name: hosts_airbnb_paris
       - name: listings_airbnb_paris
-     
+
+
+version: 2
+
+exposures:
+
+  - name: airbnb_paris
+    label: Airbnb Paris
+    type: dashboard
+    maturity: high
+
+    
+
+    depends_on:
+      - ref('activity')
+      - ref('Listings_per_Host')
+      - ref('licenses')
+      - ref('short-term_rentals')
+      - ref('Top_Hosts')
+      - ref('room_type')
+      - source("airbnb_paris","listings_airbnb_paris")
+      - source("airbnb_paris","hosts_airbnb_paris")
+
+    owner:
+      name: Team Aliou Seydi, Fatimatou Ogo Seck et Sokhna Amainata Sy Diouf
+      email: samsydiouf14@gmail.com
