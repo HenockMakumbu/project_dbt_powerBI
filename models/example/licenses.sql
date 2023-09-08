@@ -14,7 +14,7 @@ group by type_license
 inter_data as (
 	select * from(select * from source_data
 	union
-    select 'pendidng', (SELECT COUNT(*) FROM listings_airbnb_paris) - (SELECT sum(n_license) FROM source_data))tab
+    select 'pendidng', (SELECT COUNT(*) FROM {{source("airbnb_paris","listings_airbnb_paris")}}) - (SELECT sum(n_license) FROM source_data))tab
     cross join
     (select sum(n_license) as total from source_data)tab1
 ),

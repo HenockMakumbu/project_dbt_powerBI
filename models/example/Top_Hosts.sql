@@ -5,7 +5,7 @@ l.host_id,host_name,
   count(case when lower(room_type) LIKE '%private%' then room_type end) as shared_room,
   count(case when lower(room_type) LIKE '%shared%' then room_type end) as private_room,
   count(l.host_id) as n_listings
-from listings_airbnb_paris l
+from {{source("airbnb_paris","listings_airbnb_paris")}} l
 join 
 hosts_airbnb_paris h on l.host_id = h.host_id
 group by l.host_id, host_name

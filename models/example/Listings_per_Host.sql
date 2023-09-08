@@ -3,7 +3,7 @@ select listings_by_hosts, sum(listings_by_hosts) as n_listings from(
 select
 host_id,
 count(*) as listings_by_hosts
-from listings_airbnb_paris
+from {{source("airbnb_paris","listings_airbnb_paris")}}
 group by host_id)tab
 group by listings_by_hosts
 order by listings_by_hosts
@@ -37,9 +37,7 @@ case
 	case 
 		when listings_by_hosts>=10 then n_listings
 	end
-	
 	) 
-	
 	over() 
 	else n_listings
 end

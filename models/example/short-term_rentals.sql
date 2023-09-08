@@ -7,7 +7,7 @@ case
 	else'min_nights(>=30)'
 end
 as group_nights
-from listings_airbnb_paris
+from {{source("airbnb_paris","listings_airbnb_paris")}}
 group by minimum_nights 
 order by minimum_nights
 
